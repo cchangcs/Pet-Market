@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="userDao" class="com.petmarket.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="userService" class="com.petmarket.service.UserService">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="userAction" class="com.petmarket.actions.UserAction" 
+		scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<bean id="petDao" class="com.petmarket.dao.PetDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="petService" class="com.petmarket.service.PetService">
+		<property name="petDao" ref="petDao"></property>
+	</bean>
+	
+	<bean id="petAction" class="com.petmarket.actions.PetAction">
+		<property name="petService" ref="petService"></property>
+	</bean>
+	
+	<bean id="shoppingCartDao" class="com.petmarket.dao.ShoppingCartDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="shoppingCartService" class="com.petmarket.service.ShoppingCartService">
+		<property name="shoppingCartDao" ref="shoppingCartDao"></property>
+	</bean>
+	
+	<bean id="shoppingCartAction" class="com.petmarket.actions.ShoppingCartAction">
+		<property name="shoppingCartService" ref="shoppingCartService"></property>
+	</bean>
+</beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<!-- 
+		private Integer phoneNumber;// 主键，电话号码
+		private String password;
+		private ShoppingCart shoppingCart;// 采用1-1关联映射
+		private String address;// 收货地址
+		private String gender;// 性别
+		private Date birthday;// 生日
+		private String headerUrl;// 头像->时间不够可以不实现
+	 -->
+	 <class name="com.petmarket.entities.User" table="USER">
+	 	<id name="phoneNumber" type="java.lang.String">
+	 		<column name="PHONE_NUMBER"></column>
+	 	</id>	
+	 	
+	 	<property name="password" type="java.lang.String">
+	 		<column name="PASSWORD"></column>	 		
+	 	</property>
+	 	
+	 	<property name="address" type="java.lang.String">
+	 		<column name="ADDRESS" ></column>
+	 	</property>
+		
+		<property name="gender" type="java.lang.String">
+			<column name="GENDER"></column>
+		</property>	 	
+		
+		<property name="birthday" type="java.util.Date">
+			<column name="BIRTHDAY"></column>
+		</property>
+		
+		<property name="headerUrl" type="java.lang.String">
+		 	<column name="HEADERURL"></column>
+		</property>
+	 </class>
+</hibernate-mapping>

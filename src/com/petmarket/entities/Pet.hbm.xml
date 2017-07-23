@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	
+	<!-- 
+		private Integer petId;// 宠物id
+		private String name;// 宠物名称
+		private Integer price;// 价格
+		private Integer number;// 库存数量
+		private String introduction;// 简介
+		private String shape;//体型
+		private Integer weight;//体重
+		private String coatColour;//毛色
+	 -->
+	
+	<class name="com.petmarket.entities.Pet" table="PET">
+		<id name="petId" type="java.lang.Integer">
+			<column name="PET_ID"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="shape" type="java.lang.String">
+			<column name="SHAPE"></column>
+		</property>
+		<property name="weight" type="java.lang.Integer">
+			<column name="WEIGHT"></column>
+		</property>
+		<property name="coatColour" type="java.lang.String"> 
+			<column name="COAT_COLOUR"></column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME"></column>
+		</property>
+		
+		<property name="price" type="java.lang.Integer">
+			<column name="PRICE"></column>
+		</property>
+		
+		<property name="number" type="java.lang.Integer">
+			<column name="NUMBER"></column>
+		</property>
+		
+		<property name="introduction" type="java.lang.String">
+			<column name="INTRODUCTION"></column>
+		</property>
+	</class>
+</hibernate-mapping>

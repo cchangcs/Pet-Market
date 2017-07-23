@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<!-- 
+		private Integer shoppingCartId;// 购物车ID
+		private User user;// 用户
+	 -->
+	 
+	 <class name="com.petmarket.entities.ShoppingCart" table="SHOPPINGCART">
+	 	<id name="shoppingCartId" type="java.lang.Integer">
+	 		<column name="SHOPPING_CART_ID"></column>
+	 		<generator class="native"></generator>
+	 	</id>
+	 	<property name="userId" type="java.lang.String">
+	 		<column name="USER_ID" ></column>
+	 	</property>
+	 	
+	 	<property name="petId" type="java.lang.Integer">
+	 		<column name="PET_ID"></column>
+	 	</property>
+	 	
+	 	<property name="number" type="java.lang.Integer">
+	 		<column name="NUMBER"></column>
+	 	</property>
+	 </class>
+</hibernate-mapping>

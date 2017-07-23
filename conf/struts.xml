@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="default" namespace="/" extends="struts-default">
+		
+		<action name="pet-*" class="userAction"
+			method="{1}">
+			<result type="redirectAction" name="signup">/user-getAll</result>
+			<result type="redirectAction" name="login-success">/user-getAll</result>
+			<result type="stream" name="login-failed">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result type="stream" name="validate">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="login">/login.jsp</result>
+			<result type="redirectAction" name="home">/cart-getPetsFromShoppingCart</result>
+		</action>
+	
+		<action name="user-*" class="petAction"
+			method="{1}">
+				<result name="index">/index.jsp</result>
+				<result name="details">/details.jsp</result>
+		</action>
+		
+		<action name="cart-*" class="shoppingCartAction"
+			method="{1}">
+				<result name="shoppingcart">/addSuccess.jsp</result>
+				<result name="pets">/homepage.jsp</result>
+				<result type="redirectAction" name="delete">/cart-getPetsFromShoppingCart</result>
+				<result type="stream" name="totalPrice">
+					<param name="contentType">text/html</param>
+					<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>    

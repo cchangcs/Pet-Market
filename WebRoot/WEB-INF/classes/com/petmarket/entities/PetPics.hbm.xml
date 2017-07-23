@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	
+	<!-- 
+		private Integer picId;//图片id
+		private String picUrl;//图片URL
+	 -->
+	
+	<class name="com.petmarket.entities.PetPics" table="PETPICS">
+		<id name="picId" type="java.lang.Integer">
+			<column name="PIC_ID"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="picUrl" type="java.lang.String">
+			<column name="PIC_URL"></column>
+		</property>
+		 
+		<many-to-one name="pet" class="com.petmarket.entities.Pet">
+			<column name="PET_ID"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
